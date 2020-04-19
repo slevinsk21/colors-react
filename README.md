@@ -7,7 +7,7 @@ ESlint - Prettier
 
 ### Production
 
-See [now.sh URL](https://colors-vue.now.sh/)
+See [now.sh URL](https://colors-react-ozjeja802.now.sh/)
 
 ## Project setup
 
@@ -18,7 +18,7 @@ yarn install
 ### Compiles and hot-reloads for development
 
 ```
-yarn serve
+yarn star
 ```
 
 ### Compiles and minifies for production
