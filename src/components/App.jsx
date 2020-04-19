@@ -1,56 +1,45 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useLocation
+} from 'react-router-dom';
+
+// Global components
+import Header from './Header';
+import Layout from '../containers/Layout';
 import Footer from './Footer';
-import AddTodo from '../containers/AddTodo';
-import VisibleTodoList from '../containers/VisibleTodoList';
+
+const NoMatch = () => {
+  const location = useLocation();
+  return (
+    <h2 style={{ fontSize: 200 }}>
+      No match for <code>{location.pathname}</code>
+    </h2>
+  );
+};
 
 const App = () => (
   <>
     <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
+      <Header />
+      <Switch>
+        <Route exact path="/">
+          <Layout />
+        </Route>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
+        <Route path="/sand-box">
+          <h1>sand-box</h1>
+        </Route>
+
+        <Route path="*">
+          <NoMatch />
+        </Route>
+      </Switch>
+      <Footer />
     </Router>
   </>
 );
 
 export default App;
-
-const Home = () => (
-  <>
-    <h2>Home</h2>
-    <AddTodo />
-    <VisibleTodoList />
-    <Footer />
-  </>
-);
-
-const About = () => <h2>About</h2>;
-
-const Users = () => <h2>Users</h2>;

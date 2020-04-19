@@ -1,6 +1,10 @@
 {
-  "name": "boilerplate-react",
-  "version": "1.0.0",
+  "name": "colors-react",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slevinsk21/colors-react"
+  },
   "description": "project React - Redux config with webpack, babel, sass, prettier, eslint",
   "main": "index.js",
   "author": "\"Leonel Castellano [castellanolj21@gmail.com]\"",
@@ -8,15 +12,20 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development",
+    "start": "webpack-dev-server --mode development --hot",
     "build": "webpack --mode production"
   },
   "dependencies": {
+    "@material-ui/core": "^4.9.9",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.50",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
