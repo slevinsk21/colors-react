@@ -11,7 +11,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'public'),
     publicPath: '/',
     filename: 'bundle.js'
   },
@@ -19,7 +19,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx']
   },
   devServer: {
-    contentBase: './build'
+    contentBase: './public'
   },
   module: {
     rules: [
